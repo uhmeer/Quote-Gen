@@ -1,0 +1,93 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    display: grid;
+    place-content: center;
+    background: #e0e0e0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    margin-inline: 5vw;
+    opacity: 0;
+    transform: translateY(-50%);
+    animation: fadeIn 1s .5s forwards;
+    /* animation-delay: .5s; */
+}
+.container > * {
+    margin-block-start: 3rem;
+}
+
+h1 {
+    font-weight: normal;
+    font-size: clamp(2rem, 5vw, 7rem);
+    position: relative;
+}
+h1::before {
+    content: '"';
+    z-index: -1;
+    position: absolute;
+    top: -.3em;
+    left: -.2em;
+    opacity: 0.1;
+    font-size: 30rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+button {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+button > * {
+    flex: 1;
+}
+
+button span {
+    white-space: nowrap;
+    font-size: clamp(1.2rem, 1.5vw, 4rem);
+}
+button:hover svg {
+    transform: translateX(20%);
+}
+/* when the button is hovered over move the svg ^^^ */
+
+button span:hover {
+    text-decoration: underline;
+}
+
+button svg {
+    width: 40px;
+    transition: transform .3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
